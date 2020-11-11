@@ -1,15 +1,15 @@
-function [sigma,E_real,X,Y] = initial(a)
+function [sigma,E_real,X,Y] = initial(x,y)
     %clear;
     %a = 1.5;
     %theta = 0:60;  %视角
-    x_num = 16;
-    y_num = 16;
-    left = (30-(x_num-1)*a)/2;
-    right = 30-left;
-    top = (30-(y_num-1)*a)/2;
-    bottom = 30-top;
-    X = left:a:right; %灯平面坐标
-    Y = top:a:bottom;
+%     x_num = 16;
+%     y_num = 16;
+%     left = (30-(x_num-1)*a)/2;
+%     right = 30-left;
+%     top = (30-(y_num-1)*a)/2;
+%     bottom = 30-top;
+%     X = left:a:right; %灯平面坐标
+%     Y = top:a:bottom;
     xt = 1:30;  %目标平面坐标，30*30
     yt = 1:30;
     m = 1;
@@ -17,11 +17,11 @@ function [sigma,E_real,X,Y] = initial(a)
     z = 10;
     E_sum = zeros(30,30);
     mse = 0;
-    qq = 0;
+%     qq = 0;
 
-    for x0 = X
-        for y0 = Y
-            qq=qq+1;
+    for x0 = x
+        for y0 = y
+%             qq=qq+1;
             E = E0(x0,y0,xt,yt,I0,m,z);
             E_sum = E_sum + E;  
         end
